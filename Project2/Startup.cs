@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +27,9 @@ namespace Project2
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddAuthentication()
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
        .AddGoogle(options =>
        {
            IConfigurationSection googleAuthNSection =
