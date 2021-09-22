@@ -12,8 +12,6 @@ namespace Project2.Models
         public Role Role { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsRegistred { get; set; }
-        public List<MathTask> MathTasks { get; set; }
-
 
     }
 }
