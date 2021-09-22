@@ -24,7 +24,7 @@ namespace Project2.Controllers
         public ObjectResult GetUsers()
         {
             List<UserModel> Users = new List<UserModel>();
-
+            
             for(int i = 0; i < 10; i++)
             {
                 Random r = new Random();

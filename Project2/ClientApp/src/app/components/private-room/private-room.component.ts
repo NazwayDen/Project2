@@ -4,8 +4,8 @@ import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-private-room',
-  styles: [require('./private-room.component.css').toString()],
-  template: require('./private-room.component.html'),
+  templateUrl: './private-room.component.html',
+  styleUrls: ['./private-room.component.css'],
   providers:[UserService]
 })
 export class PrivateRoomComponent implements OnInit {
@@ -17,6 +17,7 @@ export class PrivateRoomComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loadUsers();
   }
   
   public loadUsers():void{
