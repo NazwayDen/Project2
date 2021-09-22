@@ -26,6 +26,15 @@ namespace Project2
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddAuthentication()
+       .AddGoogle(options =>
+       {
+           IConfigurationSection googleAuthNSection =
+               Configuration.GetSection("Authentication:Google");
+
+           options.ClientId = googleAuthNSection["943522904470-r18onv2052i8d4nlq3buiuu7jbk6fcmm.apps.googleusercontent.com"];
+           options.ClientSecret = googleAuthNSection["PVvuOPoWuZ99E9h_a4r1B9D2"];
+       });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
