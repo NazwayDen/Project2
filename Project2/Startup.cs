@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,14 +27,19 @@ namespace Project2
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddAuthentication()
+            services.AddAuthentication(options => {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                 .AddCookie(options => {
+                     options.LoginPath = "/account/google-login";
+
+                 })
        .AddGoogle(options =>
        {
-           IConfigurationSection googleAuthNSection =
-               Configuration.GetSection("Authentication:Google");
+           
 
-           options.ClientId = googleAuthNSection["943522904470-r18onv2052i8d4nlq3buiuu7jbk6fcmm.apps.googleusercontent.com"];
-           options.ClientSecret = googleAuthNSection["PVvuOPoWuZ99E9h_a4r1B9D2"];
+           options.ClientId = "943522904470-r18onv2052i8d4nlq3buiuu7jbk6fcmm.apps.googleusercontent.com";
+           options.ClientSecret ="PVvuOPoWuZ99E9h_a4r1B9D2";
        });
         }
 
@@ -59,6 +65,7 @@ namespace Project2
             }
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
