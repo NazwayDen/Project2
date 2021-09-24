@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project2.Models.Context;
 
 namespace Project2
 {
@@ -20,12 +23,30 @@ namespace Project2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllersWithViews();
+
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<MathDbContext>(options => options.UseSqlServer(connection));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddAuthentication(options => {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                 .AddCookie(options => {
+                     options.LoginPath = "/account/google-login";
+
+                 })
+       .AddGoogle(options =>
+       {
+           
+
+           options.ClientId = "943522904470-r18onv2052i8d4nlq3buiuu7jbk6fcmm.apps.googleusercontent.com";
+           options.ClientSecret ="PVvuOPoWuZ99E9h_a4r1B9D2";
+       });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +71,7 @@ namespace Project2
             }
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

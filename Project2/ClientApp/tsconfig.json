@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": "./",
     "module": "esnext",
@@ -10,6 +10,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2015",
+    "types": [
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -18,4 +21,6 @@
       "dom"
     ]
   }
+  
 }
+
