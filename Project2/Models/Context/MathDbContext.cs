@@ -9,6 +9,7 @@ namespace Project2.Models.Context
     public class MathDbContext: DbContext
     {
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<MathTask> MathTasks { get; set; }
         public MathDbContext(DbContextOptions<MathDbContext> options) : base(options)
         {
             Database.EnsureCreated();

@@ -14,8 +14,12 @@ namespace Project2.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Condition { get; set; }
-        public string[] Answer { get; set; }
+
+        [NotMapped]
+        public ICollection<Answer> Answers {get;set;}
         public int CreatorId { get; set; }
+
+        [NotMapped]
         public UserModel CreatorUser { get; set; }
 
         [NotMapped]
@@ -31,13 +35,14 @@ namespace Project2.Models
             }
         }
         public int RateId { get; set; }
+        [NotMapped]
         public ICollection<CommentModel> Comments { get; set; }
         public int LikeCount { get; set; }
         public int DislikeCount { get; set; }
 
         public MathTask()
         {
-            Answer = new string[3];
+            Answers = new List<Answer>();
             Comments = new List<CommentModel>();
         }
 
