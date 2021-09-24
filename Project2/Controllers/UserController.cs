@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Project2.Models.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project2.Controllers
 {
@@ -14,30 +16,17 @@ namespace Project2.Controllers
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
-
-        public UserController(ILogger<UserController> logger)
+        private readonly MathDbContext _dbContext;
+        public UserController(ILogger<UserController> logger, MathDbContext dbContext)
         {
             _logger = logger;
+            _dbContext = dbContext;
         }
 
         [Route("GetUsers")]
-        public ObjectResult GetUsers()
+        public async Task<ObjectResult> GetUsers()
         {
-            List<UserModel> Users = new List<UserModel>();
-            
-            for(int i = 0; i < 10; i++)
-            {
-                Random r = new Random();
-                Users.Add(new UserModel()
-                {
-                    Id = i,
-                    Nickname = $"name{i}",
-                    Role = (Role)r.Next(1, 2),
-                    IsAdmin = false,
-                    IsRegistred = true
-                });
-            }
-            return Ok(Users);
-        }    
+            return Ok(await _dbContext.Users.ToListAsync());
+        }
     }
 }
