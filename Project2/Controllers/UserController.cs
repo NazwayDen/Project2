@@ -16,7 +16,7 @@ namespace Project2.Controllers
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
-        private MathDbContext _dbContext;
+        private readonly MathDbContext _dbContext;
         public UserController(ILogger<UserController> logger, MathDbContext dbContext)
         {
             _logger = logger;
