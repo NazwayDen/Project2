@@ -1,9 +1,13 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { PrivateRoomComponent } from './components/private-room/private-room.component';
+
+import {
+  HomeComponent,
+  CounterComponent,
+  FetchDataComponent,
+  PrivateRoomComponent,
+  NavMenuComponent
+} from './components';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
