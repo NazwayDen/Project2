@@ -1,6 +1,11 @@
 <body>
   <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
+  <div class="my-container">
+    <div class="left-side">
+      <app-left-menu></app-left-menu>
+    </div>
+    <div class="right-side">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </body>

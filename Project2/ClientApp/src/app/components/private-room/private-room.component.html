@@ -1,37 +1,70 @@
-<div class="lk-leftside-menu">
-  <ul class="list-group">
-    <li class="list-group-item active sizeli">Личный кабинет</li>
-    <li class="list-group-item sizeli">Мои задачи</li>
-    <li class="list-group-item sizeli">Поиск задач</li>
-    <li class="list-group-item sizeli">Настройки</li>
-    <li class="list-group-item sizeli">Выйти</li>
-  </ul>
-</div>
-<div class="lcprofile">
-  <div class="lcbox">
-    <div class="avatarka"></div>
-    <div>
-    <div class="nick">NazwayDen </div>
-   <div class="task"> <div class="counttask">Созданные задачи: 20</div>
-    <div class="donetask">Решенные задачи: 10</div></div>
+<div class="lk-main-container">
+  <div class="lk-profile">
+    <div class="lk-profile-info">
+      <div class="avatar">
+        <img
+          src="https://habrastorage.org/getpro/habr/post_images/6ed/d94/57e/6edd9457ec4ef14fd413377a3cfb0fb4.png"
+        />
+      </div>
+      <div class="info">
+        <div class="nickname">Denis</div>
+        <div class="stats">
+          <div class="all-tasks">
+            <span> All tasks: {{ allTask }} </span>
+          </div>
+          <div class="copleted-tasks stat">
+            <span> Completed tasks: {{ completeTask }} </span>
+          </div>
+          <div class="my-tasks stat">
+            <span> My tasks: {{ myTask }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lk-math-table">
+      <div class="table-navigation">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+          </div>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="math-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">ShortDescrtiption</th>
+              <th scope="col">Status</th>
+              <th scope="col">Author</th>
+              <th scope="col">Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="math-table-pag"></div>
     </div>
   </div>
-<div class=helpdiv> 
-  
-   
-</div>
-
-</div>
-<div class="lccentre-task">
-  <ul class="list-group">
-    <li class="list-group-item centretask-first">Мои задачи</li>
-    <li class="list-group-item centretask-first">Мои задачи</li>
-    <li class="list-group-item centretask-first">Мои задачи</li>
-    <li class="list-group-item centretask-first">Мои задачи</li>
-  </ul>
-</div>
-<div class="lk-rightside-menu">
-  
- 
- 
 </div>
