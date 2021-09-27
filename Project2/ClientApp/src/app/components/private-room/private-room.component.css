@@ -56,3 +56,6 @@
         flex-direction: row;
         justify-content:space-between;
     }
+    .search{
+        margin-right: 100px;
+    }
