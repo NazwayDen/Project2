@@ -1,4 +1,3 @@
-import * as internal from "stream";
 import { User } from "./user";
 
 export class Comment {
