@@ -1,3 +1,6 @@
 .lk-leftside-menu{
     width:max-content;
 }
+.sizeli:hover{
+    cursor: pointer;
+}

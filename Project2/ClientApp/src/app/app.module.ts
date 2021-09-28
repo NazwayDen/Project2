@@ -12,7 +12,8 @@ import {
   CounterComponent,
   HomeComponent,
   PrivateRoomComponent,
-  LeftMenuComponent
+  LeftMenuComponent,
+  SearchTaskComponent
 } from './components';
 
 
@@ -24,7 +25,8 @@ import {
     CounterComponent,
     PrivateRoomComponent,
     FetchDataComponent,
-    LeftMenuComponent
+    LeftMenuComponent,
+    SearchTaskComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

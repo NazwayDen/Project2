@@ -6,6 +6,8 @@ export class Mathtask {
     
     id:number;
     name:string;
+    shortDescription:string;
+    status:boolean;
     condition:string;
     creatorId:number;
     rateId:number;
