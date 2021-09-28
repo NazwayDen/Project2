@@ -35,7 +35,6 @@
     .lcbox{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         background-color:rgb(246,246,246);
     }
     .avatarka{
@@ -56,6 +55,12 @@
         flex-direction: row;
         justify-content:space-between;
     }
-    .search{
-        margin-right: 100px;
+    .lksearch{
+        margin-left: 350px;
+   width: 500px;
     }
+    .lcinfo{
+    margin: 10px;
+    padding: 10px;
+    }
+   
