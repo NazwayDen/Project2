@@ -1,3 +1,67 @@
-<p>
-  search-task works!
-</p>
+<div class="all">
+  <div class="filtrs">
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
+    <div class class="sort">
+      <form action="">
+        <select name="" id="">
+          <option value="" disabled>Сортировать по</option>
+          <option value="">Новейшие</option>
+          <option value="">Давнишний</option>
+          <option value="">Популярность</option>
+          <option value="">Самый тяжелый</option>
+          <option value="">Самый простой</option>
+        </select>
+      </form>
+    </div>
+    <div></div>
+  </div>
+  <div class="searchTable">
+    <div class="math-table">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" class="maintabl">#</th>
+            <th scope="col" class="maintabl">Name</th>
+            <th scope="col" class="maintabl">ShortDescrtiption</th>
+            <th scope="col" class="maintabl">Status</th>
+            <th scope="col" class="maintabl">Author</th>
+            <th scope="col" class="maintabl">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of taskarray">
+            <td>
+              {{ task.id }}
+            </td>
+            <td>
+              {{ task.name }}
+            </td>
+            <td>
+              {{ task.shortDescription }}
+            </td>
+            <td>
+              {{ task.status }}
+            </td>
+            <td>
+              {{ task.creatorUser.nickname }}
+            </td>
+            <td>
+              {{ task.rating }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+>
+<div class="pag"></div>

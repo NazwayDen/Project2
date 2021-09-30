@@ -1,9 +1,11 @@
 <div class="lk-leftside-menu">
-  <ul class="list-group">
-    <li class="list-group-item active sizeli" [routerLink]="['/lk']" routerLinkActive="router-link-active" >Личный кабинет</li>
-    <li class="list-group-item sizeli">Мои задачи</li>
-    <li class="list-group-item sizeli" [routerLink]="['/search-task']" routerLinkActive="router-link-active" >Поиск задач</li>
-    <li class="list-group-item sizeli">Настройки</li>
-    <li class="list-group-item sizeli">Выйти</li>
-  </ul>
+  <div class="list-group">
+    <button type="button" class="btn btn-outline-primary  sizeli" [routerLink]="['/lk']" routerLinkActive="router-link-active">
+      Личный кабинет
+    </button>
+    <button type="button" class="btn btn-outline-primary sizeli">Мои задачи</button>
+    <button type="button" class="btn btn-outline-primary sizeli" [routerLink]="['/search-task']" routerLinkActive="router-link-active" >Поисе задач</button>
+    <button type="button" class="btn btn-outline-primary sizeli">Настройки</button>
+    <button type="button" class="btn btn-outline-primary sizeli" >Выйти</button>
+  </div>
 </div>

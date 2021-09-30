@@ -1,6 +1,11 @@
 .lk-leftside-menu{
     width:max-content;
 }
-.sizeli:hover{
+.sizeli{
+    border:none;
+   color: rgb(19, 16, 16);
     cursor: pointer;
+}
+.active, .sizeli:hover{
+    background-color: blue;
 }
