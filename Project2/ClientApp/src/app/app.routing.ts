@@ -7,7 +7,8 @@ import {
   FetchDataComponent,
   PrivateRoomComponent,
   NavMenuComponent,
-  SearchTaskComponent
+  SearchTaskComponent,
+  CreateTaskComponent
 } from './components';
 
 const appRoutes: Routes = [
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'lk', component: PrivateRoomComponent },
-      { path: 'search-task', component: SearchTaskComponent }
+      { path: 'search-task', component: SearchTaskComponent },
+      { path: 'create-task', component:CreateTaskComponent}
 ];
 
 export const routing: ModuleWithProviders<RouterModule> = RouterModule.forRoot(appRoutes);
