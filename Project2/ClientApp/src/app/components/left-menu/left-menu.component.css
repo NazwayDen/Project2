@@ -7,5 +7,5 @@
     cursor: pointer;
 }
 .active, .sizeli:hover{
-    background-color: blue;
+    background-color: rgb(112, 135, 236);
 }

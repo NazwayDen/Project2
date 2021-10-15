@@ -1,43 +1,35 @@
 <div>
-  <div class="lk-profile">
-  <div class="lk-profile-info">
-    <div class="avatar">
-      <img
-        src="https://habrastorage.org/getpro/habr/post_images/6ed/d94/57e/6edd9457ec4ef14fd413377a3cfb0fb4.png"
-      />
-    </div>
-    <div class="info">
-      <div class="nickname">Denis</div>
-      <div class="stats">
-        <div class="all-tasks">
-          <span> All tasks: {{ allTask }} </span>
-        </div>
-        <div class="copleted-tasks stat">
-          <span> Completed tasks: {{ completeTask }} </span>
-        </div>
-        <div class="my-tasks stat">
-          <span> My tasks: {{ myTask }} </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
   <div class="newTask">
     <form>
       <div class="form-group">
         <label for="formGroupExampleInput">Тема</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Example input"
+        />
       </div>
       <div class="form-group">
-        <label for="formGroupExampleInput2">#Тег</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-      <div class="form-group ">
         <label for="formGroupExampleInput2">Описание</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Another input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Условие</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Another input"
+        />
       </div>
     </form>
-    <div class="language">
+    <!--<div class="language">
       <form action="">
         <select name="" id="">
           <option value="" disabled>Язык</option>
@@ -45,7 +37,87 @@
           <option value="">Английский</option>
         </select>
       </form>
+    </div>-->
+    <div class="tagVari">
+      <div class="tag">
+        <div class="onlyTag">
+          <form>
+            <div class="form-group">
+              <div class="tagHeader">
+                <label for="formGroupExampleInput">#Тег</label>
+                <div class="btntag">
+                  <button
+                    type="button"
+                    class="btn btn-primary add-tag"
+                    (click)="createNewTag()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="newForm" *ngFor="let item of tags">
+                <input
+                  type="text"
+                  class="form-control tagI"
+                  placeholder="Example input"
+                  value="{{ item }}"
+                  (change)="oonChangeTextTags(item)"
+                />
+                <div class="minus">
+                  <button
+                    type="button"
+                    class="btn btn-primary save"
+                    (click)="minusTag(item)"
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="vari">
+        <div class="onlyVari">
+          <form>
+            <div class="form-group">
+              <div class="variHeader">
+                <label for="formGroupExampleInput">Варианты</label>
+                <div class="btnvari">
+                  <button
+                    type="button"
+                    class="btn btn-primary save"
+                    (click)="createNewAnswer()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="newForm" *ngFor="let item of answer">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Example input"
+                  value="{{ item }}"
+                  (change)="oonChangeTextTags(item)"
+                />
+                <div class="minus">
+                  <button
+                    type="button"
+                    class="btn btn-primary save"
+                    (click)="minusVari(item)"
+                  >
+                    - 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-   <div class="btnsave"> <button type="button" class="btn btn-primary save">Сохранить</button></div>
+    <div class="btnsave">
+      <button type="button" class="btn btn-primary save">Сохранить</button>
+    </div>
   </div>
 </div>

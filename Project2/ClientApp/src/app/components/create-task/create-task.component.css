@@ -1,38 +1,44 @@
-.lk-profile-info{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-.lk-profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.nickname{
-    font-size: 20px;
-}
-.info{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
-.stats{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;   
-}
-.stat{
-    margin-left: 20px;
-}
-.save{
-    margin-top: 10px;
-    
-}
+
 
 .btnsave{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.tagVari{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.tag{
+    display: flex;
+    flex-direction: row;
+}
+.newForm{
+    display: flex;
+    flex-direction: row;
+}
+.minus{
+    margin-left: 10px;
+    width: 50px;
+}
+
+.vari{
+    display: flex;
+    flex-direction: row;
+}
+.btntag{
+    margin-left: 10px;
+}
+.tagHeader{
+    display:flex;
+    flex-direction: row;
+}
+.variHeader{
+    display:flex;
+    flex-direction: row;
+}
+.btnvari{
+    margin-left: 10px;
 }

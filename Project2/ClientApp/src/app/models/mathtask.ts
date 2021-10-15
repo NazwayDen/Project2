@@ -13,6 +13,7 @@ export class Mathtask {
     rateId:number;
     likeCount:number;
     dislikeCount:number;
+    tags:string[];
 
     comments:Comment[];
     creatorUser:User;
